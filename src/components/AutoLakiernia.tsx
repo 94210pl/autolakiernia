@@ -117,7 +117,7 @@ const Services = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Nasze Usługi</h2>
-          <p className="text-slate-400 text-lg">Kompleksowa oferta dla Twojego pojazdu</p>
+          <p className="text-slate-400 text-lg">Kompleksowa naprawa Twojego pojazdu</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
