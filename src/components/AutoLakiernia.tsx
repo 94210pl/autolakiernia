@@ -63,7 +63,7 @@ const Hero = () => {
           Profesjonalne<br />Blacharstwo i Lakiernictwo
         </h1>
         <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl mx-auto">
-          Przywracamy blasku Twojemu pojazdowi. Najwyższa jakość, precyzja i doświadczenie.
+          Najwyższa jakość, precyzja i doświadczenie. Zgłoś szkodę, a my zajmiemy się resztą. Przystępne ceny.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <button 
@@ -247,7 +247,7 @@ const handleSubmit = async (e: { preventDefault: () => void; }) => {
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
       console.error("Błąd przy wysyłaniu do Google Sheets:", error);
-      alert("Nie udało się wysłać formularza 😭");
+      alert("Nie udało się wysłać formularza. Prosimy spróbować za jakiś czas");
     }
   };
 
