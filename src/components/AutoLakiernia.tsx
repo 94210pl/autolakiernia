@@ -1,6 +1,149 @@
 import React, { useState } from 'react';
+import { Sparkles, Wrench, Paintbrush, Hammer, ArrowRight, Phone, Mail, MapPin, Clock, Star, X } from 'lucide-react';
 
-import { Sparkles, Wrench, Paintbrush, Hammer, ArrowRight, Phone, Mail, MapPin, Clock, Star } from 'lucide-react';
+// Privacy Policy Modal Component
+const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+      <div className="relative w-full max-w-4xl max-h-[90vh] bg-slate-900 rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+        {/* Header */}
+        <div className="sticky top-0 flex items-center justify-between p-6 bg-slate-900/95 backdrop-blur-xl border-b border-white/10">
+          <h2 className="text-2xl font-bold text-white">Polityka Prywatności</h2>
+          <button
+            onClick={onClose}
+            className="p-2 rounded-lg hover:bg-slate-800 transition-colors"
+            aria-label="Zamknij"
+          >
+            <X className="h-6 w-6 text-slate-400 hover:text-white" />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 overflow-y-auto max-h-[calc(90vh-100px)] text-slate-300 space-y-6">
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">1. Administrator Danych</h3>
+            <p>
+              Administratorem danych osobowych jest AutoLakiernia z siedzibą przy ul. Prusa 8, 00-001 Lublin.
+              W sprawach związanych z ochroną danych osobowych można kontaktować się pod adresem email: kontakt@autolakiernia.pl
+            </p>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">2. Zakres Przetwarzanych Danych</h3>
+            <p className="mb-2">Przetwarzamy następujące dane osobowe:</p>
+            <ul className="list-disc list-inside space-y-1 ml-4">
+              <li>Imię i nazwisko</li>
+              <li>Adres email</li>
+              <li>Numer telefonu</li>
+              <li>Treść wiadomości</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">3. Cel Przetwarzania Danych</h3>
+            <p className="mb-2">Twoje dane osobowe przetwarzamy w celu:</p>
+            <ul className="list-disc list-inside space-y-1 ml-4">
+              <li>Odpowiedzi na zapytania przesłane przez formularz kontaktowy</li>
+              <li>Udzielenia informacji o naszych usługach</li>
+              <li>Przygotowania wyceny usług</li>
+              <li>Kontaktu w sprawach związanych z naprawami pojazdów</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">4. Podstawa Prawna</h3>
+            <p>
+              Przetwarzanie danych odbywa się na podstawie zgody (art. 6 ust. 1 lit. a RODO) wyrażonej poprzez wysłanie formularza kontaktowego
+              oraz na podstawie prawnie uzasadnionego interesu administratora (art. 6 ust. 1 lit. f RODO) polegającego na prowadzeniu
+              korespondencji z klientami.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">5. Okres Przechowywania Danych</h3>
+            <p>
+              Dane osobowe będą przechowywane przez okres niezbędny do realizacji celów, dla których zostały zebrane,
+              jednak nie dłużej niż przez 3 lata od ostatniego kontaktu, chyba że przepisy prawa wymagają dłuższego okresu przechowywania.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">6. Odbiorcy Danych</h3>
+            <p>
+              Twoje dane mogą być udostępniane następującym kategoriom odbiorców:
+            </p>
+            <ul className="list-disc list-inside space-y-1 ml-4 mt-2">
+              <li>Dostawcom usług IT (hosting, poczta elektroniczna)</li>
+              <li>Podmiotom świadczącym usługi księgowe i prawne</li>
+              <li>Organom uprawnionym na podstawie przepisów prawa</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">7. Twoje Prawa</h3>
+            <p className="mb-2">Przysługuje Ci prawo do:</p>
+            <ul className="list-disc list-inside space-y-1 ml-4">
+              <li>Dostępu do swoich danych osobowych</li>
+              <li>Sprostowania danych</li>
+              <li>Usunięcia danych</li>
+              <li>Ograniczenia przetwarzania</li>
+              <li>Przenoszenia danych</li>
+              <li>Wniesienia sprzeciwu wobec przetwarzania</li>
+              <li>Cofnięcia zgody w dowolnym momencie</li>
+              <li>Wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">8. Pliki Cookies</h3>
+            <p>
+              Nasza strona internetowa wykorzystuje pliki cookies wyłącznie w celach technicznych, zapewniających prawidłowe
+              funkcjonowanie strony. Nie wykorzystujemy cookies do śledzenia użytkowników ani do celów marketingowych.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">9. Bezpieczeństwo Danych</h3>
+            <p>
+              Stosujemy odpowiednie środki techniczne i organizacyjne zapewniające bezpieczeństwo przetwarzanych danych osobowych,
+              w szczególności zabezpieczamy dane przed ich udostępnieniem osobom nieupoważnionym, utratą czy uszkodzeniem.
+            </p>
+          </section>
+
+          <section>
+            <h3 className="text-xl font-semibold text-white mb-3">10. Kontakt</h3>
+            <p>
+              W sprawach dotyczących przetwarzania danych osobowych oraz realizacji swoich praw prosimy o kontakt:
+            </p>
+            <ul className="list-none space-y-1 ml-4 mt-2">
+              <li>Email: kontakt@autolakiernia.pl</li>
+              <li>Telefon: +48 123 456 789</li>
+              <li>Adres: ul. Prusa 8, 00-001 Lublin</li>
+            </ul>
+          </section>
+
+          <section className="pt-4 border-t border-white/10">
+            <p className="text-sm text-slate-400">
+              Ostatnia aktualizacja: {new Date().toLocaleDateString('pl-PL')}
+            </p>
+          </section>
+        </div>
+
+        {/* Footer */}
+        <div className="sticky bottom-0 p-6 bg-slate-900/95 backdrop-blur-xl border-t border-white/10">
+          <button
+            onClick={onClose}
+            className="w-full px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-xl font-semibold hover:shadow-xl hover:shadow-cyan-500/50 transition-all"
+          >
+            Rozumiem
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 // Navbar Component
 const Navbar = () => {
@@ -216,16 +359,8 @@ const Contact = () => {
     phone: '',
     message: ''
   });
-/*
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Dziękujemy za wiadomość! Skontaktujemy się wkrótce.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  };
-*/
 
-
-const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
   
     const formDataToSend = new FormData();
@@ -239,7 +374,7 @@ const handleSubmit = async (e: { preventDefault: () => void; }) => {
         "https://script.google.com/macros/s/AKfycbw9hyT9tzN7MvC0bKbE-2HiC5KdVVHjZy-OXkwXrtsk7HTAs6j92tPowuzgUADFUasT/exec",
         {
           method: "POST",
-          body: formDataToSend, // 💥 to jest klucz
+          body: formDataToSend,
         }
       );
   
@@ -291,7 +426,7 @@ const handleSubmit = async (e: { preventDefault: () => void; }) => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-white">Adres</h3>
-                <p className="text-slate-400">ul. Warsztatowa 15<br />00-001 Warszawa</p>
+                <p className="text-slate-400">ul. Prusa 8<br />00-001 Lublin</p>
               </div>
             </div>
 
@@ -378,45 +513,59 @@ const handleSubmit = async (e: { preventDefault: () => void; }) => {
 
 // Footer Component
 const Footer = () => {
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+
   return (
-    <footer className="py-12 bg-slate-950 border-t border-white/5">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center shadow-lg shadow-cyan-500/50">
-                <Sparkles className="h-5 w-5 text-slate-900" />
+    <>
+      <footer className="py-12 bg-slate-950 border-t border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center shadow-lg shadow-cyan-500/50">
+                  <Sparkles className="h-5 w-5 text-slate-900" />
+                </div>
+                <span className="text-xl font-bold text-white">AutoLakiernia</span>
               </div>
-              <span className="text-xl font-bold text-white">AutoLakiernia</span>
+              <p className="text-slate-400">Profesjonalne blacharstwo i lakiernictwo samochodowe. Twoje auto w najlepszych rękach.</p>
             </div>
-            <p className="text-slate-400">Profesjonalne blacharstwo i lakiernictwo samochodowe. Twoje auto w najlepszych rękach.</p>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-white">Szybkie Linki</h3>
+              <ul className="space-y-2">
+                <li><a href="#services" className="text-slate-400 hover:text-cyan-400 transition-colors">Usługi</a></li>
+                <li><a href="#portfolio" className="text-slate-400 hover:text-cyan-400 transition-colors">Realizacje</a></li>
+                <li><a href="#contact" className="text-slate-400 hover:text-cyan-400 transition-colors">Kontakt</a></li>
+                <li>
+                  <button 
+                    onClick={() => setIsPrivacyOpen(true)}
+                    className="text-slate-400 hover:text-cyan-400 transition-colors"
+                  >
+                    Polityka Prywatności
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-white">Zaufali Nam</h3>
+              <div className="flex items-center gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="text-slate-400">500+ zadowolonych klientów</p>
+            </div>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Szybkie Linki</h3>
-            <ul className="space-y-2">
-              <li><a href="#services" className="text-slate-400 hover:text-cyan-400 transition-colors">Usługi</a></li>
-              <li><a href="#portfolio" className="text-slate-400 hover:text-cyan-400 transition-colors">Realizacje</a></li>
-              <li><a href="#contact" className="text-slate-400 hover:text-cyan-400 transition-colors">Kontakt</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Zaufali Nam</h3>
-            <div className="flex items-center gap-1 mb-2">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-              ))}
-            </div>
-            <p className="text-slate-400">500+ zadowolonych klientów</p>
+          <div className="pt-8 border-t border-white/5 text-center text-slate-400">
+            <p>&copy; 2025 AutoLakiernia. Wszelkie prawa zastrzeżone.</p>
           </div>
         </div>
+      </footer>
 
-        <div className="pt-8 border-t border-white/5 text-center text-slate-400">
-          <p>&copy; 2025 AutoLakiernia. Wszelkie prawa zastrzeżone.</p>
-        </div>
-      </div>
-    </footer>
+      <PrivacyPolicyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
+    </>
   );
 };
 
