@@ -160,7 +160,7 @@ const Navbar = () => {
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center shadow-lg shadow-cyan-500/50">
               <Sparkles className="h-5 w-5 text-slate-900" />
             </div>
-            <span className="text-xl font-bold text-white">ASO PZM Lublin</span>
+            <span className="text-xl font-bold text-white">AutoLakiernia</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
