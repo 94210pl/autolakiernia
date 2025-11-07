@@ -426,7 +426,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-white">Adres</h3>
-                <p className="text-slate-400">ul. Prusa 8<br />00-001 Lublin</p>
+                <p className="text-slate-400">ul. Prosta 1<br />00-001 Lublin</p>
               </div>
             </div>
 
