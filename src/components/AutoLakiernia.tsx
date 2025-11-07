@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Wrench, Paintbrush, Hammer, ArrowRight, Phone, Mail, MapPin, Clock, Star, X } from 'lucide-react';
+import { Sparkles, Wrench, Paintbrush, Hammer, ArrowRight, Phone, Mail, MapPin, Clock, Star, X, CarFront } from 'lucide-react';
 
 // Privacy Policy Modal Component
 const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
@@ -25,7 +25,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
           <section>
             <h3 className="text-xl font-semibold text-white mb-3">1. Administrator Danych</h3>
             <p>
-              Administratorem danych osobowych jest AutoLakiernia z siedzibą przy ul. Prusa 8, 00-001 Lublin.
+              Administratorem danych osobowych jest AutoLakiernia z siedzibą przy ul. Prostej 1, 00-001 Lublin.
               W sprawach związanych z ochroną danych osobowych można kontaktować się pod adresem email: kontakt@autolakiernia.pl
             </p>
           </section>
@@ -120,7 +120,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
             <ul className="list-none space-y-1 ml-4 mt-2">
               <li>Email: kontakt@autolakiernia.pl</li>
               <li>Telefon: +48 123 456 789</li>
-              <li>Adres: ul. Prusa 8, 00-001 Lublin</li>
+              <li>Adres: ul. Prosta 1, 00-001 Lublin</li>
             </ul>
           </section>
 
@@ -158,9 +158,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center shadow-lg shadow-cyan-500/50">
-              <Sparkles className="h-5 w-5 text-slate-900" />
+              <CarFront className="h-5 w-5 text-slate-900" />
             </div>
-            <span className="text-xl font-bold text-white">AutoLakiernia</span>
+            <span className="text-xl font-bold text-white">ASO PZM Lublin</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -523,7 +523,7 @@ const Footer = () => {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center shadow-lg shadow-cyan-500/50">
-                  <Sparkles className="h-5 w-5 text-slate-900" />
+                  <CarFront className="h-5 w-5 text-slate-900" />
                 </div>
                 <span className="text-xl font-bold text-white">AutoLakiernia</span>
               </div>
