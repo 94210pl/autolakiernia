@@ -233,9 +233,37 @@ const Hero = () => {
 const Services = () => {
   const services = [
     {
+      icon: Clock,
+      title: "Pierwszy kontakt i zgłoszenie szkody",
+      description: "Kontakt z Klientem celem przeprowadzenia audytu i późniejszej naprawy.",
+      gradient: "from-cyan-400 to-cyan-600",
+      shadow: "shadow-cyan-500/30",
+    },
+    {
+      icon: ArrowRight,
+      title: "Rozliczenia Bezgotówkowe",
+      description: "Współpracujemy ze wszystkimi firmami ubezpieczeniowymi.",
+      gradient: "from-purple-400 to-purple-600",
+      shadow: "shadow-purple-500/30",
+    },
+    {
+      icon: Star,
+      title: "Realizacje na zlecenie klienta",
+      description: "Oferujemy niskie ceny i szybkie terminy realizacji. Zapewniamy miłą i fachową obsługę Klienta",
+      gradient: "from-teal-400 to-teal-600",
+      shadow: "shadow-teal-500/30",
+    },
+    {
       icon: Wrench,
       title: "Naprawy Powypadkowe",
       description: "Kompleksowe naprawy po kolizjach. Przywracamy pojazd do pierwotnego stanu z zachowaniem najwyższych standardów jakości.",
+      gradient: "from-cyan-400 to-cyan-600",
+      shadow: "shadow-cyan-500/30",
+    },
+    {
+      icon: MapPin,
+      title: "Auta Zastępcze",
+      description: "Klient otrzymuje możliwość wynajmu auta zastępczego na czas naprawy pojazdu.",
       gradient: "from-cyan-400 to-cyan-600",
       shadow: "shadow-cyan-500/30",
     },
@@ -291,19 +319,19 @@ const Portfolio = () => {
     {
       before: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&h=300&fit=crop",
       after: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400&h=300&fit=crop",
-      title: "Naprawa Drzwi",
+      title: "Naprawa karoserii",
       category: "Blacharstwo + Lakierowanie",
     },
     {
       before: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&h=300&fit=crop",
       after: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&h=300&fit=crop",
-      title: "Odnowa Zderzaka",
+      title: "Odnowa zderzaka",
       category: "Naprawa Powypadkowa",
     },
     {
       before: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=400&h=300&fit=crop",
       after: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=400&h=300&fit=crop",
-      title: "Usunięcie Gradu",
+      title: "Usunięcie wgnieceń",
       category: "PDR",
     },
   ];
